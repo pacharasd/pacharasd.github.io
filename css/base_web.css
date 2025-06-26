@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #222831;
+  color: #ffffff;
+}
+
+/* === NAVBAR === */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  /* ✅ ตรึงตำแหน่ง */
+  top: 0;
+  /* ✅ ชิดขอบบน */
+  left: 0;
+  width: 100%;
+  /* ✅ เต็มความกว้าง */
+  background-color: #222831;
+  /* ✅ ใส่พื้นหลังเพื่อไม่ให้โปร่ง */
+  z-index: 1000;
+  /* ✅ ให้อยู่เหนือเนื้อหาอื่น */
+  padding: 0 40px;
+  /* เพิ่มระยะห่างด้านข้าง (แล้วแต่ดีไซน์คุณ) */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.logo {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* === CONTENT === */
+.container {
+  max-width: 100%;
+  position: relative;
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.hero-one {
+  font-size: 30px;
+}
+
+.hero-two {
+  font-size: 80px;
+}
+
+.hero-tree {
+  font-size: 30px;
+}
+
+.hero-tree span {
+  color: #00FFF5;
+}
+
+/* === PROFILE IMAGE === */
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -250px;
+  margin-left: 800px;
+}
+
+.blob-shape {
+  width: 400px;
+  height: 400px;
+  background-color: #3b82f6;
+  clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+  position: relative;
+}
+
+.blob-shape img {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .container {
+    margin: 50px 20px;
+  }
+
+  .hero-two {
+    font-size: 50px;
+  }
+
+  .hero-one,
+  .hero-tree {
+    font-size: 24px;
+  }
+
+  .profile-wrapper {
+    margin: 50px auto;
+    margin-top: 80px;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .blob-shape,
+  .blob-shape img {
+    width: 250px;
+    height: 250px;
+  }
+}
