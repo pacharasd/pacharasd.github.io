@@ -1,0 +1,224 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#about,
+#skill,
+#contact,
+#home {
+  scroll-margin-top: 50px;
+}
+
+/* ส่วน about */
+.about {
+  background-color: #393E46;
+  margin-top: 100px;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.about h1 {
+  text-align: center;
+  padding: 30px;
+}
+
+/* รูปภาพโปรไฟล์ */
+.hero-about {
+  max-width: 100%;
+  justify-content: center;
+}
+
+.hero-pic {
+  margin-top: 50px;
+}
+
+.hero-pic img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin: 40px auto;
+  display: block;
+  border: 5px solid #ffffff30;
+}
+
+/* ข้อมูลส่วนตัว */
+.me-detail {
+  max-width: 50%;
+  margin: 60px auto;
+  padding: 20px 30px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.me-detail a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ส่วน skill */
+.hero-skill {
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.hero-skill h1 {
+  text-align: center;
+  padding: 30px;
+  margin-top: -50px;
+}
+
+/* การ์ด skill */
+.skill-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
+  padding: 20px;
+}
+
+.card {
+  width: calc(25% - 40px);
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+.card img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* ลิงก์ที่ active ในเมนู */
+nav ul li a.active {
+  color: #3b82f6;
+  font-weight: bold;
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* ส่วน contact */
+.hero-contact {
+  background-color: #393E46;
+  height: 500px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.hero-contact h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  padding: 30px;
+  margin-top: 10px;
+}
+
+/* การ์ด contact */
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-item {
+  background-color: #222831;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 250px;
+}
+
+.contact-item img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+/* ส่วน footer */
+.footer-container {
+  background-color: #222831;
+  color: #EEEEEE;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Breakpoints */
+
+/* Notebook / Medium screen: 3 การ์ดต่อแถว */
+@media (max-width: 1200px) {
+  .card {
+    width: calc(33.333% - 20px);
+  }
+}
+
+/* Tablet: 2 การ์ดต่อแถว */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+
+  .me-detail {
+    max-width: 90%;
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  .hero-contact h1,
+  .hero-skill h1,
+  .about h1 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile: 1 การ์ดต่อแถว */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .me-detail {
+    font-size: 14px;
+  }
+
+  .contact-item {
+    width: 90%;
+  }
+
+  .hero-contact h1,
+  .hero-skill h1,
+  .about h1 {
+    font-size: 20px;
+  }
+
+  .card img {
+    width: 80px;
+  }
+}
