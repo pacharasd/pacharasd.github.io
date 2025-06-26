@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base_web.css" />
+    <link rel="stylesheet" href="css/body.css">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <nav>
+                <div class="logo"><a>Portfolio</a></div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skill">Skill</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container" id="home">
+            <div class="hero-one">
+                <a>Hello, It's Me</a>
+            </div>
+            <div class="hero-two">
+                <a>Pachara seedang</a>
+            </div>
+            <div class="hero-tree">
+                <a>And I'm a <span>Frontend Developer</span></a>
+            </div>
+            <div class="profile-wrapper">
+                <div class="blob-shape">
+                    <img src="picture/73956466c18ee1d8cd484b7e339ea2f8-removebg-preview.png" alt="Profile Image" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="about" id="about">
+        <h1>About Me</h1>
+        <div class="hero-about">
+            <div class="hero-pic">
+                <img src="picture/73956466c18ee1d8cd484b7e339ea2f8.jpg" alt="Profile Image" />
+            </div>
+            <div class="me-detail">
+                <a>Hello! I'm currently a fourth-year student at Dhurakij Pundit University, studying in the College of
+                    Engineering and Technology, majoring in Information Technology and Data.
+
+                    I specialize in frontend development, with a strong ability to convert Figma designs into responsive
+                    HTML and CSS.</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-skill" id="skill">
+        <h1>My Skill</h1>
+        <section class="skill-card">
+            <div class="card">
+                <img src="picture/html.png" alt="Profile Image" />
+                <p>HTML</p>
+            </div>
+            <div class="card">
+                <img src="picture/css.png" alt="Profile Image" />
+                <p>CSS</p>
+            </div>
+            <div class="card">
+                <img src="picture/bootstrap.png" alt="Profile Image" />
+                <p>BOOTSTRAP</p>
+            </div>
+            <div class="card">
+                <img src="picture/file.png" alt="Profile Image" />
+                <p>PYTHON</p>
+            </div>
+            <div class="card">
+                <img src="picture/sql.png" alt="Profile Image" />
+                <p>SQL</p>
+            </div>
+            <div class="card">
+                <img src="picture/word-processor.png" alt="Profile Image" />
+                <p>WORD</p>
+            </div>
+            <div class="card">
+                <img src="picture/slide.png" alt="Profile Image" />
+                <p>POWERPOINT</p>
+            </div>
+            <div class="card">
+                <img src="picture/sheet.png" alt="Profile Image" />
+                <p>EXCEL</p>
+            </div>
+
+        </section>
+    </div>
+    <div class="hero-contact" id="contact">
+        <h1>My Contact</h1>
+        <div class="contact-card">
+            <div class="contact-item">
+                <img src="picture/telephone.png" alt="Phone Icon" />
+                <p>061-187-2583</p>
+            </div>
+            <div class="contact-item">
+                <img src="picture/mail.png" alt="Email Icon" />
+                <p>privatemailforwork05@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <img src="picture/map.png" alt="Location Icon" />
+                <p>Bangkok, Thailand</p>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.facebook.com/best1155001?locale=th_TH" target="_blank">
+                    <img src="picture/communication.png" alt="Instagram Icon" />
+                </a>
+                <p>Print Pachara </p>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.instagram.com/best_pachara_/" target="_blank">
+                    <img src="picture/social.png" alt="Instagram Icon" />
+                </a>
+                <p>@best_pachara_</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Pachara Seedang. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // เลือกลิงก์ทั้งหมดในเมนู
+        const menuLinks = document.querySelectorAll('nav ul li a');
+
+        // ฟังก์ชันลบ class active ทุกลิงก์
+        function removeActive() {
+            menuLinks.forEach(link => link.classList.remove('active'));
+        }
+
+        // เพิ่ม event ให้ลิงก์ทุกตัว
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                removeActive();       // ลบ active เดิม
+                this.classList.add('active'); // เพิ่ม active ให้ลิงก์ที่คลิก
+            });
+        });
+
+        // (ถ้าต้องการแบบ scroll spy ให้แจ้งเพิ่ม)
+    </script>
+</body>
+
+</html>
