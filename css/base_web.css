@@ -17,22 +17,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding: 0 20px;
+  padding: 0 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
-  /* ✅ ตรึงตำแหน่ง */
   top: 0;
-  /* ✅ ชิดขอบบน */
   left: 0;
   width: 100%;
-  /* ✅ เต็มความกว้าง */
   background-color: #222831;
-  /* ✅ ใส่พื้นหลังเพื่อไม่ให้โปร่ง */
   z-index: 1000;
-  /* ✅ ให้อยู่เหนือเนื้อหาอื่น */
-  padding: 0 40px;
-  /* เพิ่มระยะห่างด้านข้าง (แล้วแต่ดีไซน์คุณ) */
 }
 
 nav ul {
@@ -66,6 +59,7 @@ nav ul li a {
 
 .hero-two {
   font-size: 80px;
+  word-break: break-word;
 }
 
 .hero-tree {
@@ -103,6 +97,31 @@ nav ul li a {
 }
 
 /* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 100px;
+  }
+
+  .profile-wrapper {
+    margin-left: 400px;
+  }
+
+  .hero-two {
+    font-size: 60px;
+  }
+
+  .hero-one,
+  .hero-tree {
+    font-size: 26px;
+  }
+
+  .blob-shape,
+  .blob-shape img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -118,7 +137,7 @@ nav ul li a {
   }
 
   .container {
-    margin: 50px 20px;
+    margin: 50px 20px 0 20px;
   }
 
   .hero-two {
@@ -131,15 +150,43 @@ nav ul li a {
   }
 
   .profile-wrapper {
-    margin: 50px auto;
-    margin-top: 80px;
-    margin-left: 0;
-    justify-content: center;
+    margin: 50px auto 0 auto;
   }
 
   .blob-shape,
   .blob-shape img {
     width: 250px;
     height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 50px 10px 0 10px;
+  }
+
+  .hero-two {
+    font-size: 36px;
+  }
+
+  .hero-one,
+  .hero-tree {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .profile-wrapper {
+    margin: 40px auto 0 auto;
+    justify-content: center;
+  }
+
+  .blob-shape,
+  .blob-shape img {
+    width: 200px;
+    height: 200px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
   }
 }
