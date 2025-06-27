@@ -14,7 +14,6 @@ html {
   background-color: #393E46;
   margin-top: 100px;
   height: 100%;
-  justify-content: center;
   position: relative;
   padding: 0 20px;
   box-sizing: border-box;
@@ -23,6 +22,7 @@ html {
 .about h1 {
   text-align: center;
   padding: 30px;
+  font-size: 32px;
 }
 
 /* รูปภาพโปรไฟล์ */
@@ -36,8 +36,8 @@ html {
 }
 
 .hero-pic img {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 300px;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
@@ -49,7 +49,8 @@ html {
 
 /* ข้อมูลส่วนตัว */
 .me-detail {
-  max-width: 50%;
+  width: 100%;
+  max-width: 600px;
   margin: 60px auto;
   padding: 20px 30px;
   font-family: 'Poppins', sans-serif;
@@ -68,7 +69,6 @@ html {
 
 /* ส่วน skill */
 .hero-skill {
-  justify-content: center;
   position: relative;
   padding: 0 20px;
   box-sizing: border-box;
@@ -78,6 +78,7 @@ html {
   text-align: center;
   padding: 30px;
   margin-top: -50px;
+  font-size: 32px;
 }
 
 /* การ์ด skill */
@@ -85,7 +86,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0px;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -114,12 +115,11 @@ nav ul li a.active {
 /* ส่วน contact */
 .hero-contact {
   background-color: #393E46;
-  height: 500px;
-  justify-content: center;
+  height: auto;
   position: relative;
   text-align: center;
   color: #ffffff;
-  padding: 0 20px;
+  padding: 0 20px 40px;
   box-sizing: border-box;
 }
 
@@ -175,7 +175,7 @@ nav ul li a.active {
 /* Notebook / Medium screen: 3 การ์ดต่อแถว */
 @media (max-width: 1200px) {
   .card {
-    width: calc(33.333% - 20px);
+    width: calc(33.333% - 30px);
   }
 }
 
@@ -195,6 +195,10 @@ nav ul li a.active {
   .hero-skill h1,
   .about h1 {
     font-size: 24px;
+  }
+
+  .contact-card {
+    gap: 20px;
   }
 }
 
@@ -220,5 +224,10 @@ nav ul li a.active {
 
   .card img {
     width: 80px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    align-items: center;
   }
 }
