@@ -190,3 +190,28 @@ nav ul li a {
     font-size: 16px;
   }
 }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive: มือถือ/แท็บเล็ต */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
