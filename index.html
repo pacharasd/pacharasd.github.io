@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="envelope-wrapper" id="envelope">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <h1 class="title">Happy Valentine's Day❤️</h1>
+                        <p class="subtitle">情人节快乐</p>
+                        <p class="body-text">Happy Valentine เด็กอ้วนปีนี้ไม่มีอะไรให้เลยขอโทษ
+                            ขอให้อ้วนมีความสุขได้กินแต่ของอร่อยๆ ขอให้อ้วนกลับมาสดใสเหมือนก่อนนะ
+                            ที่จริงนึกว่าจะให้อยู่ด้วยกันก่อนได้ไปทำงานแต่ก็ผิดแผนไปนิด
+                            เลยเสียใจนิดหน่อย
+                            เค้าเผลอไปอ่านที่อ้วนเขียนให้เค้า
+                            อ่านได้แค่วันนี้เบสท์ทำไก่แดงให้กินเข้าก็อ่านต่อไม่ไหวแล้ว(ฝุ่นเข้าตา) #ฝึกงานสู้ๆนะ
+                        </p>
+                    </div>
+                    <button id="musicBtn" class="music-btn">เพลงนี้มอบให้เธอ</button>
+                </div>
+                <!-- Flap of the envelope -->
+                <div class="flap"></div>
+                <!-- Pocket of the envelope -->
+                <div class="pocket"></div>
+                <!-- Heart seal -->
+                <div class="heart-seal"></div>
+                <!-- Wings -->
+                <svg class="wing left-wing" viewBox="0 0 100 100">
+                    <path d="M100,50 Q40,0 10,40 Q0,60 30,70 Q20,80 50,85 Q40,95 80,90 Q90,95 100,50 Z" />
+                </svg>
+                <svg class="wing right-wing" viewBox="0 0 100 100">
+                    <path d="M0,50 Q60,0 90,40 Q100,60 70,70 Q80,80 50,85 Q60,95 20,90 Q10,95 0,50 Z" />
+                </svg>
+            </div>
+        </div>
+        <button id="resetBtn" class="hidden-btn">Close</button>
+
+    </div>
+
+    <!-- Vinyl Player Screen (Initially Hidden) -->
+    <div class="vinyl-container hidden">
+        <div class="player-case">
+            <div class="vinyl-record" id="vinylRecord">
+                <div class="vinyl-label"></div>
+                <div class="play-pause-overlay">
+                    <div class="play-icon"></div>
+                </div>
+            </div>
+            <div class="tonearm" id="tonearm">
+                <div class="tonearm-pivot"></div>
+                <div class="tonearm-shaft"></div>
+                <div class="tonearm-head"></div>
+            </div>
+        </div>
+
+        <div class="song-info">
+            <h2>หากจะเพียงขอ(Sincare)</h2>
+            <p>PURPEECH</p>
+        </div>
+
+        <div class="progress-wrapper">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="progressBar" value="0" min="0" step="1">
+            <span id="duration">0:00</span>
+        </div>
+
+        <button id="backBtn" class="back-btn">Go Back</button>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+
+</html>
