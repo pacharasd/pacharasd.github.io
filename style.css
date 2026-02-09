@@ -1,0 +1,749 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.envelope-wrapper {
+    position: relative;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Envelope Styles */
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+/* Wings */
+.wing {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    z-index: -1;
+    fill: #ffffff;
+    stroke: #5a3e2b;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    top: 20px;
+    transition: transform 0.5s ease;
+}
+
+.left-wing {
+    left: -100px;
+    transform: rotate(-25deg);
+    animation: flap-left 0.6s ease-in-out infinite alternate;
+}
+
+.right-wing {
+    right: -100px;
+    transform: rotate(25deg);
+    animation: flap-right 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes flap-left {
+    from {
+        transform: rotate(-25deg) translateY(-10px);
+    }
+
+    to {
+        transform: rotate(-35deg) translateY(-10px);
+    }
+}
+
+@keyframes flap-right {
+    from {
+        transform: rotate(25deg) translateY(-10px);
+    }
+
+    to {
+        transform: rotate(35deg) translateY(-10px);
+    }
+}
+
+.envelope {
+    position: relative;
+    width: 440px;
+    height: 300px;
+    background-color: #f2e8c9;
+    /* Beige */
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid #5a3e2b;
+    /* Dark brown border */
+}
+
+/* Side Flaps */
+.envelope::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 220px solid #e6d7b9;
+    /* Slightly darker beige */
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+    z-index: 2;
+}
+
+.envelope::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-right: 220px solid #e6d7b9;
+    /* Slightly darker beige */
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid transparent;
+    z-index: 2;
+}
+
+/* Bottom Pocket */
+.pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 180px solid #f2e8c9;
+    /* Flattened beige */
+    z-index: 3;
+    border-radius: 0 0 10px 10px;
+    filter: drop-shadow(0 -2px 2px rgba(90, 62, 43, 0.3));
+    /* Shadow for depth */
+}
+
+/* The Flap */
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+    border-top: 155px solid #f2e8c9;
+    /* Flattened beige */
+    transform-origin: top;
+    transition: transform 0.6s ease-in-out, z-index 0.6s;
+    z-index: 4;
+    filter: drop-shadow(0 2px 2px rgba(90, 62, 43, 0.3));
+}
+
+/* Heart Seal */
+.heart-seal {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 155px;
+    /* Centered on the flap tip */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #ff3366;
+    box-shadow: 0 2px 10px rgba(255, 51, 102, 0.3);
+    z-index: 5;
+    transition: opacity 0.4s;
+    animation: seal-heartbeat 1.5s infinite;
+    cursor: pointer;
+}
+
+@keyframes seal-heartbeat {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    10% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+
+    20% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+.heart-seal::before,
+.heart-seal::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #ff3366;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-seal::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart-seal::after {
+    left: -25px;
+    top: 0;
+}
+
+/* Letter */
+.letter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 414px;
+    height: 280px;
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease-in-out, z-index 0.6s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text .title {
+    font-family: 'Dancing Script', cursive;
+    color: #ff3366;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.text .subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.text .body-text {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Open State */
+.envelope-wrapper.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-wrapper.open .letter {
+    transform: translateY(-80px);
+    /* Move up slightly more to clear pocket */
+    z-index: 10;
+    /* Make sure it's above everything */
+    transition-delay: 0.1s;
+    /* Slight delay to look natural */
+    height: 320px;
+    /* Expand to show full content */
+}
+
+/* Ensure button is clickable */
+.music-btn {
+    pointer-events: auto;
+    position: relative;
+    z-index: 20;
+}
+
+.envelope-wrapper.open .heart-seal {
+    opacity: 0;
+}
+
+/* Click hint */
+.click-hint {
+    margin-top: 50px;
+    color: white;
+    background-color: #ff3366;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.hidden-btn {
+    margin-top: 20px;
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.envelope-wrapper.open~.hidden-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.envelope-wrapper.open~.click-hint {
+    opacity: 0;
+}
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Heart animations */
+.falling-heart {
+    position: fixed;
+    top: -20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    animation: fall linear forwards;
+    color: #ff3366;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+.rising-heart {
+    position: fixed;
+    bottom: -20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 35;
+    animation: rise linear forwards;
+    color: #ff3366;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-105vh) rotate(-360deg);
+    }
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        transform: scale(0.8);
+    }
+
+    .vinyl-record {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        transform: scale(0.65);
+    }
+
+    /* Optimize Vinyl Player for Mobile */
+    .vinyl-record {
+        width: 220px;
+        height: 220px;
+        border-width: 4px;
+    }
+
+    .vinyl-label {
+        width: 80px;
+        height: 80px;
+        background-size: 50%;
+    }
+
+    .song-info {
+        margin-top: 20px;
+    }
+
+    .song-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .song-info p {
+        font-size: 0.9rem;
+    }
+
+    .progress-wrapper {
+        width: 85%;
+        margin-top: 20px;
+    }
+
+    .music-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        transform: scale(0.55);
+    }
+
+    .vinyl-record {
+        width: 180px;
+        height: 180px;
+    }
+
+    .song-info h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ensure music button is always clickable and visible */
+.music-btn {
+    margin-top: 25px;
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+
+.music-btn:hover {
+    transform: scale(1.05);
+    background-color: #e62e5c;
+}
+
+/* Vinyl Player Styles */
+.vinyl-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #ffe6e6;
+    z-index: 30;
+    opacity: 1;
+    transition: opacity 0.5s;
+    padding: 20px;
+}
+
+.vinyl-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.player-case {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    background-color: #f2e8c9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #5a3e2b;
+    margin-bottom: 20px;
+}
+
+.vinyl-record {
+    width: 300px;
+    height: 300px;
+    background-color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    background: radial-gradient(circle, #2c2c2c 0%, #000 10%, #111 15%, #000 20%, #1a1a1a 25%, #000 30%, #111 35%, #000 40%, #1a1a1a 45%, #000 50%, #111 55%, #000 60%, #1a1a1a 70%);
+}
+
+.vinyl-record::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.1) 50%, transparent 60%);
+    pointer-events: none;
+}
+
+.vinyl-label {
+    width: 100px;
+    height: 100px;
+    background-color: #ff3366;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-image: url('https://img.icons8.com/ios-filled/50/ffffff/music-heart.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+/* Play/Pause Overlay */
+.play-pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.vinyl-record:hover .play-pause-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid white;
+    margin-left: 5px;
+}
+
+.playing .play-icon {
+    width: 25px;
+    height: 30px;
+    border: none;
+    background: none;
+    display: flex;
+    gap: 8px;
+}
+
+.playing .play-icon::before,
+.playing .play-icon::after {
+    content: '';
+    width: 8px;
+    height: 30px;
+    background: white;
+}
+
+/* Tonearm */
+.tonearm {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 10;
+    transform-origin: 130px 20px;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.tonearm.active {
+    transform: rotate(25deg);
+}
+
+.tonearm-pivot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: #444;
+    border-radius: 50%;
+    border: 3px solid #222;
+}
+
+.tonearm-shaft {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    width: 120px;
+    height: 6px;
+    background: #666;
+    border-radius: 3px;
+    transform: rotate(-30deg);
+    transform-origin: right center;
+}
+
+.tonearm-head {
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    width: 30px;
+    height: 20px;
+    background: #222;
+    border-radius: 3px;
+    transform: rotate(15deg);
+}
+
+.vinyl-record.spinning {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.song-info h2 {
+    font-size: 1.5rem;
+    color: #ff3366;
+    margin-bottom: 5px;
+}
+
+.song-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.progress-wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#progressBar {
+    flex-grow: 1;
+    cursor: pointer;
+    accent-color: #ff3366;
+}
+
+.back-btn {
+    padding: 10px 30px;
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #e62e5c;
+}
+
+.music-btn {
+    margin-top: 20px;
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3);
+    transition: transform 0.2s, opacity 0.4s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.envelope-wrapper.open .music-btn {
+    opacity: 1;
+    pointer-events: auto;
+    transition-delay: 0.6s;
+}
+
+.music-btn:hover {
+    transform: scale(1.05);
+}
+
+.music-btn.playing {
+    background-color: #ff99cc;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 51, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
+    }
+}
